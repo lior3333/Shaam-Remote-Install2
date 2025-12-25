@@ -53,9 +53,9 @@ export default function Process() {
                 אני מלווה אתכם מרגע הפנייה ועד שהמערכת עובדת אצלכם במחשב.
               </p>
 
-              <div className="space-y-8 relative">
+              <div className="space-y-8 relative" role="region" aria-label="שלבי התהליך">
                 {/* Connecting Line */}
-                <div className="absolute top-4 bottom-4 right-[1.6rem] w-0.5 bg-blue-100 hidden md:block"></div>
+                <div className="absolute top-4 bottom-4 right-[1.6rem] w-0.5 bg-blue-100 hidden md:block" aria-hidden="true"></div>
 
                 {steps.map((step, index) => (
                   <motion.div 
@@ -65,13 +65,14 @@ export default function Process() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
                     className="flex gap-6 relative"
+                    role="article"
                   >
-                    <div className="hidden md:flex flex-shrink-0 w-14 h-14 bg-white border-2 border-blue-100 rounded-full items-center justify-center z-10 font-bold text-blue-600 shadow-sm">
+                    <div className="hidden md:flex flex-shrink-0 w-14 h-14 bg-white border-2 border-blue-100 rounded-full items-center justify-center z-10 font-bold text-blue-600 shadow-sm" aria-hidden="true">
                       {step.number}
                     </div>
-                    <div className="flex-1 bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex-1 bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow focus-within:ring-2 focus-within:ring-blue-600">
                       <div className="flex items-center gap-3 mb-2 md:hidden">
-                        <span className="font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded text-sm">{step.number}</span>
+                        <span className="font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded text-sm" aria-label={`שלב ${step.number}`}>{step.number}</span>
                         <h3 className="font-bold text-lg text-slate-900">{step.title}</h3>
                       </div>
                       <h3 className="font-bold text-lg text-slate-900 hidden md:block mb-2">{step.title}</h3>
@@ -93,7 +94,7 @@ export default function Process() {
             >
               <img 
                 src={processImg} 
-                alt="תהליך עבודה מאובטח" 
+                alt="תמונת אילוסטרציה המציגה חיבור מאובטח מרחוק בין מחשבים עם סימני בטיחות" 
                 className="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
               />
               

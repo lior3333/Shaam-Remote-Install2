@@ -47,3 +47,44 @@
     @apply font-heading font-bold;
   }
 }
+
+@layer utilities {
+  /* Skip link - appears on focus */
+  .sr-only {
+    @apply absolute -inset-1 overflow-hidden rounded-md p-0 w-1 h-1 border-0;
+  }
+
+  .focus\:not-sr-only:focus {
+    @apply relative inset-auto w-auto h-auto p-4 border-0 overflow-visible;
+    @apply fixed top-0 start-0 z-50 bg-blue-600 text-white font-bold text-lg;
+  }
+
+  /* Clear focus indicators */
+  *:focus {
+    @apply outline-none ring-2 ring-offset-2 ring-blue-600 rounded;
+  }
+
+  button:focus,
+  a:focus,
+  input:focus,
+  textarea:focus,
+  [role="button"]:focus {
+    @apply ring-2 ring-offset-2 ring-blue-600 rounded;
+  }
+
+  /* High contrast focus for better visibility */
+  @media (prefers-contrast: more) {
+    *:focus {
+      @apply ring-4 ring-offset-4 ring-blue-900;
+    }
+  }
+
+  /* Reduced motion respect */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

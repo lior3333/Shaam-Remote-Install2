@@ -34,10 +34,23 @@ export default function FAQ() {
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-3xl font-bold text-center mb-10 text-slate-900">שאלות נפוצות</h2>
         
-        <Accordion type="single" collapsible className="w-full space-y-4">
+        <Accordion 
+          type="single" 
+          collapsible 
+          className="w-full space-y-4"
+          role="region"
+          aria-label="שאלות נפוצות ותשובות"
+        >
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 rounded-lg px-4 data-[state=open]:bg-slate-50 data-[state=open]:border-blue-200 transition-colors">
-              <AccordionTrigger className="text-lg font-medium text-slate-800 hover:text-blue-600 hover:no-underline py-4 text-right">
+            <AccordionItem 
+              key={index} 
+              value={`item-${index}`} 
+              className="border border-slate-200 rounded-lg px-4 data-[state=open]:bg-slate-50 data-[state=open]:border-blue-200 transition-colors focus-within:ring-2 focus-within:ring-blue-600"
+            >
+              <AccordionTrigger 
+                className="text-lg font-medium text-slate-800 hover:text-blue-600 hover:no-underline py-4 text-right focus:ring-2 focus:ring-blue-600 rounded"
+                aria-label={`שאלה ${index + 1}: ${faq.question}`}
+              >
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 text-base leading-relaxed pb-4 text-right">

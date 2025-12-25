@@ -5,22 +5,22 @@ const features = [
   {
     title: "חיבור ישיר ומאובטח",
     description: "התקנת רכיב שע״מ בצורה מאובטחת המאפשרת עבודה שוטפת מול רשויות המס.",
-    icon: <ShieldCheck className="w-6 h-6 text-blue-600" />
+    icon: <ShieldCheck className="w-6 h-6 text-blue-600" aria-hidden="true" />
   },
   {
     title: "גישה לרשת במקביל",
     description: "הגדרת המערכת כך שתוכלו להמשיך לגלוש באינטרנט הרגיל במקביל לעבודה בשע״מ.",
-    icon: <Globe className="w-6 h-6 text-blue-600" />
+    icon: <Globe className="w-6 h-6 text-blue-600" aria-hidden="true" />
   },
   {
     title: "תמיכה בכל הדפדפנים",
     description: "התאמת המערכת לעבודה תקינה עם כרום, אדג׳ ודפדפנים מודרניים נוספים.",
-    icon: <Laptop className="w-6 h-6 text-blue-600" />
+    icon: <Laptop className="w-6 h-6 text-blue-600" aria-hidden="true" />
   },
   {
     title: "ללא התעסקות טכנית",
     description: "אני דואג לכל ההגדרות, הדרייברים והקינפוגים. אתם מקבלים מערכת עובדת.",
-    icon: <Server className="w-6 h-6 text-blue-600" />
+    icon: <Server className="w-6 h-6 text-blue-600" aria-hidden="true" />
   }
 ];
 
@@ -42,22 +42,22 @@ export default function Features() {
         </div>
 
         {/* What I Offer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" role="region" aria-label="יתרונות השירות">
           {features.map((feature, index) => (
-            <motion.div
+            <motion.article
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow"
+              className="bg-slate-50 rounded-2xl p-6 border border-slate-100 hover:shadow-md transition-shadow focus-within:ring-2 focus-within:ring-blue-600"
             >
               <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">{feature.title}</h3>
               <p className="text-slate-600">{feature.description}</p>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
 
@@ -69,22 +69,22 @@ export default function Features() {
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">למי השירות מתאים?</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-4" role="list">
                 <li className="flex items-center gap-3">
-                  <div className="bg-blue-500 p-1 rounded-full">
-                    <CheckCircle2 className="w-5 h-5 text-white" />
+                  <div className="bg-blue-500 p-1 rounded-full flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-white" aria-hidden="true" />
                   </div>
                   <span className="text-lg text-blue-50">רואי חשבון ויועצי מס הזקוקים לגישה מיידית</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="bg-blue-500 p-1 rounded-full">
-                    <CheckCircle2 className="w-5 h-5 text-white" />
+                  <div className="bg-blue-500 p-1 rounded-full flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-white" aria-hidden="true" />
                   </div>
                   <span className="text-lg text-blue-50">משרדים שנתקלו בבעיות חיבור או איטיות</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="bg-blue-500 p-1 rounded-full">
-                    <CheckCircle2 className="w-5 h-5 text-white" />
+                  <div className="bg-blue-500 p-1 rounded-full flex-shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-white" aria-hidden="true" />
                   </div>
                   <span className="text-lg text-blue-50">מי שרוצה ראש שקט ופתרון טכני מלא</span>
                 </li>
@@ -93,7 +93,7 @@ export default function Features() {
             <div className="flex-1 w-full max-w-sm">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                     <div className="flex items-center gap-4 mb-4">
-                        <UserCheck className="w-10 h-10 text-blue-200" />
+                        <UserCheck className="w-10 h-10 text-blue-200" aria-hidden="true" />
                         <div>
                             <div className="font-bold text-lg">שירות אישי</div>
                             <div className="text-blue-200 text-sm">זמין בוואטסאפ לכל שאלה</div>
