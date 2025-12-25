@@ -7,10 +7,16 @@ import StickyCTA from "@/components/landing/StickyCTA";
 import AccessibilityButton from "@/components/AccessibilityButton";
 import { CONTACT_CONFIG } from "@/lib/config";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   return (
     <>
+      <Helmet>
+        <title>התקנת שע״מ מרחוק לרואי חשבון | שירות מהיר ומאובטח</title>
+        <meta name="description" content="שירות התקנת שע״מ (שירות עיבודים ממוכנים) מרחוק לרואי חשבון. התקנה תוך 30 דקות, חיבור מאובטח, תשלום רק לאחר הצלחה. פתרון IT מקצועי ומהיר." />
+        <meta name="keywords" content="התקנה שעמ, שעמ רואה חשבון, התקנת שע״מ, שע״מ לרואי חשבון, שירותי IT, תמיכה מרחוק, שירות עיבודים ממוכנים" />
+      </Helmet>
       <a href="#main" className="sr-only focus:not-sr-only fixed top-0 start-0 z-50 bg-blue-600 text-white font-bold text-lg p-4 rounded-b">
         דלג לתוכן הראשי
       </a>

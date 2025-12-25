@@ -1,9 +1,15 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
+import { Helmet } from "react-helmet-async";
 
 export default function Accessibility() {
   return (
     <main className="min-h-screen bg-white">
+      <Helmet>
+        <title>הצהרת נגישות | שעם התקנה מרחוק</title>
+        <meta name="description" content="אנו בשעם רואים חשיבות רבה במתן שירות שוויוני לכלל האוכלוסייה, לרבות גולשים עם מוגבלות. קראו את הצהרת הנגישות המלאה שלנו." />
+        <meta name="keywords" content="הצהרת נגישות, נגישות אתרים, WCAG 2.1, תקן 5568, שעם" />
+      </Helmet>
       <header className="bg-blue-600 text-white py-8">
         <div className="container mx-auto px-4">
           <Link href="/" className="flex items-center gap-2 text-blue-100 hover:text-white mb-4 focus:ring-2 focus:ring-white focus:outline-none focus:rounded">
