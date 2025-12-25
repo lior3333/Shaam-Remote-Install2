@@ -4,6 +4,7 @@ import Process from "@/components/landing/Process";
 import FAQ from "@/components/landing/FAQ";
 import Contact from "@/components/landing/Contact";
 import StickyCTA from "@/components/landing/StickyCTA";
+import AccessibilityButton from "@/components/AccessibilityButton";
 import { CONTACT_CONFIG } from "@/lib/config";
 import { Link } from "wouter";
 
@@ -35,6 +36,7 @@ export default function Home() {
         <FAQ />
         <Contact />
         <StickyCTA />
+        <AccessibilityButton />
         
         {/* Footer */}
         <footer className="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-sm" role="contentinfo">
